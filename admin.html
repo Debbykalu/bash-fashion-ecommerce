@@ -173,17 +173,40 @@
                 </div>
               </div>
 
-              <!-- Image Input / Preview -->
+              <!-- Image File Upload / Preset Selector -->
               <div class="mb-3">
-                <label class="form-label font-heading small fw-bold">Product Image Path / URL *</label>
-                <input type="text" id="pImage" class="form-control mb-2" placeholder="assets/images/burgundy_embroidered_kaftan.jpg">
-                <div class="form-text text-muted small">Select sample image or enter path/URL.</div>
+                <label class="form-label font-heading small fw-bold">Upload Product Image File *</label>
                 
-                <div class="d-flex gap-2 mt-2 flex-wrap">
-                  <button type="button" class="btn btn-outline-secondary btn-sm" onclick="setPresetImg('assets/images/burgundy_embroidered_kaftan.jpg')">Burgundy Kaftan</button>
-                  <button type="button" class="btn btn-outline-secondary btn-sm" onclick="setPresetImg('assets/images/charcoal_monogram_kaftan.jpg')">Charcoal Kaftan</button>
-                  <button type="button" class="btn btn-outline-secondary btn-sm" onclick="setPresetImg('assets/images/navy_kaftan_fila.jpg')">Navy Kaftan</button>
-                  <button type="button" class="btn btn-outline-secondary btn-sm" onclick="setPresetImg('assets/images/purple_native_set.jpg')">Purple Native</button>
+                <!-- File Input -->
+                <div class="input-group mb-2">
+                  <input type="file" id="pImageFile" class="form-control" accept="image/*">
+                  <button class="btn btn-outline-secondary" type="button" onclick="clearSelectedImageFile()">Clear</button>
+                </div>
+
+                <!-- Preview Thumbnail Box -->
+                <div id="imagePreviewBox" class="d-none mb-3 p-2 border rounded text-center bg-light">
+                  <img id="imagePreviewThumb" src="" alt="Apparel Image Preview" style="max-height: 140px; object-fit: contain;" class="rounded border shadow-sm">
+                  <div class="small text-success fw-bold mt-1"><i class="bi bi-check-circle-fill me-1"></i> Custom Image Ready</div>
+                </div>
+
+                <!-- Fallback Image URL / Presets -->
+                <div class="accordion accordion-flush border rounded" id="imagePresetAccordion">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed py-2 small font-heading text-muted" type="button" data-bs-toggle="collapse" data-bs-target="#presetCollapse">
+                        <i class="bi bi-images me-2"></i> Or use sample store presets / Image URL
+                      </button>
+                    </h2>
+                    <div id="presetCollapse" class="accordion-collapse collapse p-3 bg-light">
+                      <input type="text" id="pImage" class="form-control mb-2" placeholder="assets/images/burgundy_embroidered_kaftan.jpg">
+                      <div class="d-flex gap-2 flex-wrap">
+                        <button type="button" class="btn btn-outline-secondary btn-sm" onclick="setPresetImg('assets/images/burgundy_embroidered_kaftan.jpg')">Burgundy Kaftan</button>
+                        <button type="button" class="btn btn-outline-secondary btn-sm" onclick="setPresetImg('assets/images/charcoal_monogram_kaftan.jpg')">Charcoal Kaftan</button>
+                        <button type="button" class="btn btn-outline-secondary btn-sm" onclick="setPresetImg('assets/images/navy_kaftan_fila.jpg')">Navy Kaftan</button>
+                        <button type="button" class="btn btn-outline-secondary btn-sm" onclick="setPresetImg('assets/images/purple_native_set.jpg')">Purple Native</button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -316,8 +339,39 @@
       checkAdminAuth();
     }
 
+    let selectedImageDataUrl = null;
+
+    // Handle file selection
+    document.getElementById('pImageFile')?.addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+          selectedImageDataUrl = evt.target.result;
+          const previewBox = document.getElementById('imagePreviewBox');
+          const previewThumb = document.getElementById('imagePreviewThumb');
+          if (previewThumb) previewThumb.src = selectedImageDataUrl;
+          if (previewBox) previewBox.classList.remove('d-none');
+        };
+        reader.readAsDataURL(file);
+      } else {
+        clearSelectedImageFile();
+      }
+    });
+
+    function clearSelectedImageFile() {
+      selectedImageDataUrl = null;
+      const fileInput = document.getElementById('pImageFile');
+      if (fileInput) fileInput.value = '';
+      const previewBox = document.getElementById('imagePreviewBox');
+      if (previewBox) previewBox.classList.add('d-none');
+    }
+
     function setPresetImg(path) {
-      document.getElementById('pImage').value = path;
+      clearSelectedImageFile();
+      const pImgInput = document.getElementById('pImage');
+      if (pImgInput) pImgInput.value = path;
+      showBsgToast("Preset image selected", "info");
     }
 
     document.getElementById('adminUploadForm')?.addEventListener('submit', (e) => {
@@ -328,7 +382,10 @@
       const colour = document.getElementById('pColour').value;
       const price = document.getElementById('pPrice').value;
       const oldPrice = document.getElementById('pOldPrice').value;
-      const image = document.getElementById('pImage').value.trim() || 'assets/images/burgundy_embroidered_kaftan.jpg';
+      
+      const manualPath = document.getElementById('pImage')?.value.trim();
+      const finalImage = selectedImageDataUrl || manualPath || 'assets/images/burgundy_embroidered_kaftan.jpg';
+
       const description = document.getElementById('pDesc').value.trim();
       const featured = document.getElementById('pFeatured').checked;
 
@@ -354,7 +411,7 @@
         colour,
         colourHex: colorHexMap[colour] || '#6A1222',
         sizes,
-        image,
+        image: finalImage,
         description,
         featured,
         discount: oldPrice ? 'SALE' : null
@@ -362,6 +419,7 @@
 
       showBsgToast(`Product "${name}" uploaded successfully!`, "success");
       e.target.reset();
+      clearSelectedImageFile();
       renderAdminProducts();
     });
 

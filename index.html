@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BIODUN STYLE GRID | Simple Nigerian Men's Native Wear</title>
-  <meta name="description" content="BIODUN STYLE GRID (BSG) - Simple Nigerian wear, thoughtfully made for the modern man. Shop Senator outfits, Kaftans, Native shirts, and Agbada online.">
+  <title>BIODUN STYLE GRID | Nigerian Men's Native Wear</title>
+  <meta name="description" content="BIODUN STYLE GRID (BSG) - Tradition Meets Modern Style. Premium Nigerian men's native wear thoughtfully crafted for the modern gentleman.">
   
   <!-- Bootstrap 5 & Bootstrap Icons CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -17,14 +17,14 @@
 <body>
 
   <!-- Announcement Bar -->
-  <div class="announcement-bar text-center">
+  <div class="announcement-bar text-center bsg-scroll-item" data-bsg-animate="drop-top">
     <div class="container">
       <span><i class="bi bi-truck me-1"></i> FREE EXPRESS NIGERIA DELIVERY ON ORDERS OVER ₦150,000 | SECURE PAYSTACK CHECKOUT</span>
     </div>
   </div>
 
   <!-- Main Header Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-bsg">
+  <nav class="navbar navbar-expand-lg navbar-bsg border-bottom bsg-scroll-item" data-bsg-animate="drop-top" data-bsg-delay="1">
     <div class="container">
       
       <!-- LEFT: Logo -->
@@ -49,9 +49,9 @@
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-center">
           <li class="nav-item"><a class="nav-link nav-link-bsg active" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link nav-link-bsg" href="shop.html">Shop</a></li>
-          <li class="nav-item"><a class="nav-link nav-link-bsg" href="shop.html?filter=new">New Arrivals</a></li>
           <li class="nav-item"><a class="nav-link nav-link-bsg" href="collections.html">Collections</a></li>
-          <li class="nav-item"><a class="nav-link nav-link-bsg" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-bsg" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-bsg" href="contact.html">Contact Us</a></li>
         </ul>
 
         <!-- RIGHT: Account, Cart -->
@@ -69,137 +69,178 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="hero-bsg">
-    <div class="container">
+  <!-- 1. HERO SECTION (Full-Page Scroll Animated) -->
+  <section class="hero-bsg py-5 bg-bsg-bg-light position-relative overflow-hidden">
+    <div class="container py-4">
       <div class="row align-items-center g-5">
+        
+        <!-- Left: Ground-Style Drop Copy -->
         <div class="col-lg-6">
-          <span class="badge bg-bsg-gold text-dark font-heading px-3 py-2 mb-3">BIODUN STYLE GRID 2026</span>
-          <h1 class="hero-title">STYLE THAT SPEAKS FOR ITSELF.</h1>
-          <p class="hero-subtitle">Simple Nigerian wear, thoughtfully made for the modern man.</p>
+
+          <h1 class="hero-title display-4 font-heading text-dark mb-3 bsg-scroll-item" data-bsg-animate="ground-drop" data-bsg-delay="1">
+            TRADITION MEETS MODERN STYLE.
+          </h1>
+
+          <p class="hero-subtitle text-muted fs-5 mb-4 leading-relaxed bsg-scroll-item" data-bsg-animate="ground-drop" data-bsg-delay="2">
+            Simple, high-quality Nigerian native wear thoughtfully crafted for the modern gentleman. Elevate your presence with tailored Senators, Kaftans, and Agbadas.
+          </p>
           
-          <div class="d-flex gap-3 flex-wrap">
-            <a href="shop.html" class="btn btn-bsg-primary btn-lg">SHOP NOW</a>
-            <a href="collections.html" class="btn btn-bsg-secondary btn-lg">EXPLORE COLLECTION</a>
+          <div class="d-flex gap-3 flex-wrap align-items-center bsg-scroll-item" data-bsg-animate="ground-drop" data-bsg-delay="3">
+            <a href="shop.html" class="btn btn-bsg-primary btn-lg shadow-sm py-3 px-4">
+              Start Shopping Now <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+            <a href="about.html" class="btn btn-bsg-secondary btn-lg py-3 px-4">
+              Discover Our Story
+            </a>
           </div>
         </div>
 
+        <!-- Right: Dropping Image with Continuous Ambient Float -->
         <div class="col-lg-6">
-          <div class="hero-img-box">
-            <img src="assets/images/burgundy_embroidered_kaftan.jpg" alt="Modern Nigerian Male Native Wear" class="hero-img">
+          <div class="bsg-scroll-item bsg-float" data-bsg-animate="drop-top" data-bsg-delay="1">
+            <div class="hero-img-box rounded shadow-lg overflow-hidden border">
+              <img src="assets/images/burgundy_embroidered_kaftan.jpg" alt="BIODUN STYLE GRID Native Wear Luxury" class="hero-img w-100 object-cover" style="min-height: 520px;">
+            </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Shop By Category Section -->
-  <section class="py-5 bg-bsg-white border-bottom">
-    <div class="container py-3">
-      <div class="text-center mb-5">
-        <h2 class="font-heading mb-2">SHOP BY CATEGORY</h2>
-        <p class="text-muted">Explore tailored Nigerian men's native wear categories</p>
+  <!-- 2. BRAND PILLARS SECTION (Scroll-Triggered Drop Cards) -->
+  <section class="py-5 bg-white border-bottom">
+    <div class="container py-4">
+      <div class="text-center mb-5 max-w-700 mx-auto bsg-scroll-item" data-bsg-animate="ground-drop">
+        <span class="text-bsg-burgundy font-heading small fw-bold text-uppercase tracking-wider">The BSG Standard</span>
+        <h2 class="font-heading display-6 mb-2">THE ART OF NIGERIAN TAILORING</h2>
+        <p class="text-muted">Honoring rich cultural heritage through precise craftsmanship and contemporary silhouettes.</p>
       </div>
 
       <div class="row g-4">
-        <!-- Category 1: Senator -->
-        <div class="col-6 col-md-3">
-          <a href="shop.html?category=Senator" class="category-card">
-            <img src="assets/images/purple_native_set.jpg" alt="Senator Native Wear">
-            <div class="category-card-overlay">
-              <h3 class="category-card-title">Senator</h3>
-              <span class="small text-bsg-gold fw-bold">Shop Now <i class="bi bi-arrow-right"></i></span>
+        <!-- Pillar 1 -->
+        <div class="col-md-4">
+          <div class="p-4 bg-bsg-bg-light rounded border h-100 text-center bsg-scroll-item shadow-sm" data-bsg-animate="drop-top" data-bsg-delay="1">
+            <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle text-bsg-burgundy fs-3 mb-3 border shadow-sm bsg-pulse" style="width: 64px; height: 64px;">
+              <i class="bi bi-patch-check"></i>
             </div>
-          </a>
+            <h4 class="font-heading mb-2">Refined Craftsmanship</h4>
+            <p class="text-muted small mb-0">
+              Every garment is cut with mathematical precision from high-grade cotton, linen, and cashmere blends tailored for maximum elegance and longevity.
+            </p>
+          </div>
         </div>
 
-        <!-- Category 2: Native Shirts -->
-        <div class="col-6 col-md-3">
-          <a href="shop.html?category=Native Shirts" class="category-card">
-            <img src="assets/images/burgundy_embroidered_kaftan.jpg" alt="Native Shirts">
-            <div class="category-card-overlay">
-              <h3 class="category-card-title">Native Shirts</h3>
-              <span class="small text-bsg-gold fw-bold">Shop Now <i class="bi bi-arrow-right"></i></span>
+        <!-- Pillar 2 -->
+        <div class="col-md-4">
+          <div class="p-4 bg-bsg-bg-light rounded border h-100 text-center bsg-scroll-item shadow-sm" data-bsg-animate="drop-top" data-bsg-delay="2">
+            <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle text-bsg-burgundy fs-3 mb-3 border shadow-sm bsg-pulse" style="width: 64px; height: 64px;">
+              <i class="bi bi-scissors"></i>
             </div>
-          </a>
+            <h4 class="font-heading mb-2">Tailored Precision Fit</h4>
+            <p class="text-muted small mb-0">
+              Clean silhouettes designed to fit the proportions of the contemporary man effortlessly—from formal wedding galas to executive occasions.
+            </p>
+          </div>
         </div>
 
-        <!-- Category 3: Kaftan -->
-        <div class="col-6 col-md-3">
-          <a href="shop.html?category=Kaftan" class="category-card">
-            <img src="assets/images/navy_kaftan_fila.jpg" alt="Kaftan">
-            <div class="category-card-overlay">
-              <h3 class="category-card-title">Kaftan</h3>
-              <span class="small text-bsg-gold fw-bold">Shop Now <i class="bi bi-arrow-right"></i></span>
+        <!-- Pillar 3 -->
+        <div class="col-md-4">
+          <div class="p-4 bg-bsg-bg-light rounded border h-100 text-center bsg-scroll-item shadow-sm" data-bsg-animate="drop-top" data-bsg-delay="3">
+            <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle text-bsg-burgundy fs-3 mb-3 border shadow-sm bsg-pulse" style="width: 64px; height: 64px;">
+              <i class="bi bi-gem"></i>
             </div>
-          </a>
-        </div>
-
-        <!-- Category 4: Agbada -->
-        <div class="col-6 col-md-3">
-          <a href="shop.html?category=Agbada" class="category-card">
-            <img src="assets/images/charcoal_monogram_kaftan.jpg" alt="Agbada">
-            <div class="category-card-overlay">
-              <h3 class="category-card-title">Agbada</h3>
-              <span class="small text-bsg-gold fw-bold">Shop Now <i class="bi bi-arrow-right"></i></span>
-            </div>
-          </a>
+            <h4 class="font-heading mb-2">Cultural Heritage</h4>
+            <p class="text-muted small mb-0">
+              Bridging centuries of West African menswear traditions with minimal luxury aesthetic, creating timeless apparel that speaks for itself.
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Featured Collection (8 Products) -->
-  <section class="py-5 bg-bsg-bg-light">
+  <!-- 3. COUTURE ATELIER SHOWCASE SECTION (Scroll Slide & Staggered Image Drop) -->
+  <section class="py-5 bg-bsg-bg-light border-bottom">
     <div class="container py-3">
-      <div class="d-flex justify-content-between align-items-end mb-4">
-        <div>
-          <h2 class="font-heading mb-1">FEATURED COLLECTION</h2>
-          <p class="text-muted mb-0">Handpicked styles for everyday elegance</p>
+      <div class="row align-items-center g-5">
+        
+        <!-- Multi-Image Drop Grid with Sway Motion -->
+        <div class="col-lg-6 order-lg-2">
+          <div class="row g-3">
+            <div class="col-6 bsg-scroll-item bsg-sway" data-bsg-animate="drop-top" data-bsg-delay="1">
+              <img src="assets/images/navy_kaftan_fila.jpg" alt="Navy Kaftan" class="img-fluid rounded border shadow-sm w-100" style="height: 240px; object-fit: cover;">
+            </div>
+            <div class="col-6 bsg-scroll-item bsg-float" data-bsg-animate="drop-top" data-bsg-delay="2">
+              <img src="assets/images/purple_native_set.jpg" alt="Purple Senator Set" class="img-fluid rounded border shadow-sm w-100" style="height: 240px; object-fit: cover;">
+            </div>
+            <div class="col-12 bsg-scroll-item" data-bsg-animate="drop-top" data-bsg-delay="3">
+              <img src="assets/images/charcoal_monogram_kaftan.jpg" alt="Charcoal Monogram Kaftan" class="img-fluid rounded border shadow-sm w-100" style="height: 220px; object-fit: cover;">
+            </div>
+          </div>
         </div>
-        <a href="shop.html" class="btn btn-bsg-secondary btn-sm">View All Products</a>
-      </div>
 
-      <div class="row g-4" id="homeFeaturedGrid">
-        <!-- Rendered dynamically by JavaScript -->
+        <!-- Left Slide Copy -->
+        <div class="col-lg-6 order-lg-1">
+          <div class="bsg-scroll-item" data-bsg-animate="slide-left" data-bsg-delay="1">
+            <span class="badge bg-bsg-burgundy text-white font-heading px-3 py-2 mb-3">COUTURE ATELIER</span>
+            <h2 class="font-heading display-6 mb-3">EXPERIENCE THE BIODUN STYLE GRID COLLECTION</h2>
+            <p class="text-muted mb-4 leading-relaxed">
+              From our executive Senator two-piece sets to custom-embroidered Kaftans and regal Agbadas, explore our complete catalog designed for distinction.
+            </p>
+            <div class="d-flex gap-3 flex-wrap">
+              <a href="shop.html" class="btn btn-bsg-primary btn-lg shadow-sm">
+                Start Shopping Now <i class="bi bi-arrow-right ms-1"></i>
+              </a>
+              <a href="collections.html" class="btn btn-bsg-secondary btn-lg">
+                View Collections
+              </a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Brand Positioning Statement Banner -->
+  <!-- 4. MANIFESTO BANNER (Zoom & Ground Drop reveal) -->
   <section class="py-5 bg-bsg-black text-white text-center">
-    <div class="container py-4" style="max-width: 800px;">
-      <span class="badge bg-bsg-burgundy text-white font-heading px-3 py-2 mb-3">BIODUN STYLE GRID</span>
-      <h2 class="text-white display-6 mb-3">Tradition Meets Modern Innovation</h2>
-      <p class="lead opacity-80 mb-4">
+    <div class="container py-4 bsg-scroll-item" data-bsg-animate="zoom-in" style="max-width: 800px;">
+      <span class="badge bg-bsg-burgundy text-white font-heading px-3 py-2 mb-3 bsg-scroll-item" data-bsg-animate="ground-drop" data-bsg-delay="1">BIODUN STYLE GRID</span>
+      <h2 class="text-white display-6 mb-3 bsg-scroll-item" data-bsg-animate="ground-drop" data-bsg-delay="2">Tradition Meets Modern Innovation</h2>
+      <p class="lead opacity-80 mb-4 bsg-scroll-item" data-bsg-animate="ground-drop" data-bsg-delay="3">
         Designed in Lagos, BIODUN STYLE GRID creates simple, high-quality Nigerian native wear that honors rich cultural heritage while serving the contemporary lifestyle of the modern gentleman.
       </p>
-      <a href="about.html" class="btn btn-bsg-gold px-4 py-2">READ OUR STORY</a>
+      <div class="bsg-scroll-item" data-bsg-animate="ground-drop" data-bsg-delay="4">
+        <a href="about.html" class="btn btn-bsg-gold px-4 py-2">READ OUR STORY</a>
+      </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- 5. FOOTER (Staggered Scroll Reveal Columns) -->
   <footer class="footer-bsg">
     <div class="container">
       <div class="row g-4 mb-5">
-        <div class="col-lg-4">
+        
+        <div class="col-lg-4 bsg-scroll-item" data-bsg-animate="slide-left" data-bsg-delay="1">
           <img src="assets/logo-white.svg" alt="BSG Emblem" height="48" class="mb-3">
           <p class="small text-muted mb-4" style="max-width: 320px;">
             BIODUN STYLE GRID (BSG) - Nigerian men's native-wear fashion brand. Simple Nigerian wear, thoughtfully made for the modern man.
           </p>
         </div>
 
-        <div class="col-6 col-md-3 col-lg-2">
-          <h6>SHOP</h6>
+        <div class="col-6 col-md-3 col-lg-2 bsg-scroll-item" data-bsg-animate="reveal-up" data-bsg-delay="2">
+          <h6>NAVIGATION</h6>
           <ul class="list-unstyled d-flex flex-column gap-2">
+            <li><a href="index.html">Home</a></li>
             <li><a href="shop.html">Shop All</a></li>
-            <li><a href="shop.html?filter=new">New Arrivals</a></li>
             <li><a href="collections.html">Collections</a></li>
-            <li><a href="shop.html?category=Senator">Senators</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
           </ul>
         </div>
 
-        <div class="col-6 col-md-3 col-lg-3">
+        <div class="col-6 col-md-3 col-lg-3 bsg-scroll-item" data-bsg-animate="reveal-up" data-bsg-delay="3">
           <h6>CUSTOMER CARE</h6>
           <ul class="list-unstyled d-flex flex-column gap-2">
             <li><a href="contact.html">Contact Us</a></li>
@@ -209,7 +250,7 @@
           </ul>
         </div>
 
-        <div class="col-6 col-md-3 col-lg-3">
+        <div class="col-6 col-md-3 col-lg-3 bsg-scroll-item" data-bsg-animate="reveal-up" data-bsg-delay="4">
           <h6>ACCOUNT & ADMIN</h6>
           <ul class="list-unstyled d-flex flex-column gap-2 mb-3">
             <li><a href="login.html">Login</a></li>
@@ -220,8 +261,8 @@
         </div>
       </div>
 
-      <div class="border-top border-secondary pt-4 text-center small text-muted">
-        <p class="mb-0">© 2026 BIODUN STYLE GRID (BSG). All Rights Reserved. Prototype Deployed to Netlify.</p>
+      <div class="border-top border-secondary pt-4 text-center small text-muted bsg-scroll-item" data-bsg-animate="ground-drop" data-bsg-delay="5">
+        <p class="mb-0">© 2026 BIODUN STYLE GRID (BSG). All Rights Reserved. Deployed to Netlify.</p>
       </div>
     </div>
   </footer>
@@ -232,15 +273,5 @@
   <script src="js/cart.js"></script>
   <script src="js/auth.js"></script>
   <script src="js/app.js"></script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const grid = document.getElementById('homeFeaturedGrid');
-      if (grid) {
-        const featured = getAllProducts().filter(p => p.featured).slice(0, 8);
-        grid.innerHTML = featured.map(p => createProductCardHtml(p)).join('');
-      }
-    });
-  </script>
 </body>
 </html>

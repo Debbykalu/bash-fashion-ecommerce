@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us | BIODUN STYLE GRID</title>
+  <meta name="description" content="Get in touch with BIODUN STYLE GRID (BSG). Contact customer care for order inquiries, sizing assistance, and custom consultations.">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
@@ -14,12 +15,12 @@
   <!-- Announcement Bar -->
   <div class="announcement-bar text-center">
     <div class="container">
-      <span><i class="bi bi-truck me-1"></i> FREE DELIVERY IN NIGERIA ON ORDERS OVER ₦150,000</span>
+      <span><i class="bi bi-truck me-1"></i> FREE EXPRESS NIGERIA DELIVERY ON ORDERS OVER ₦150,000 | SECURE PAYSTACK CHECKOUT</span>
     </div>
   </div>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-bsg">
+  <nav class="navbar navbar-expand-lg navbar-bsg border-bottom">
     <div class="container">
       <a class="navbar-brand me-4" href="index.html">
         <img src="assets/logo.svg" alt="BIODUN STYLE GRID" height="42">
@@ -39,7 +40,8 @@
           <li class="nav-item"><a class="nav-link nav-link-bsg" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link nav-link-bsg" href="shop.html">Shop</a></li>
           <li class="nav-item"><a class="nav-link nav-link-bsg" href="collections.html">Collections</a></li>
-          <li class="nav-item"><a class="nav-link nav-link-bsg" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-bsg" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-bsg active" href="contact.html">Contact Us</a></li>
         </ul>
 
         <div class="d-none d-lg-flex align-items-center gap-3">
@@ -54,9 +56,10 @@
 
   <!-- Contact Header -->
   <section class="py-5 bg-bsg-bg-light border-bottom">
-    <div class="container text-center">
-      <h1 class="font-heading mb-1">CONTACT US</h1>
-      <p class="text-muted mb-0">We are here to assist with sizing, order inquiries, and custom consultations</p>
+    <div class="container text-center" style="max-width: 720px;">
+      <span class="badge bg-bsg-burgundy text-white font-heading px-3 py-2 mb-3">CUSTOMER CARE</span>
+      <h1 class="font-heading display-5 mb-2">CONTACT US</h1>
+      <p class="text-muted mb-0">We are here to assist with sizing guidance, order tracking, and bespoke consultations.</p>
     </div>
   </section>
 
@@ -67,38 +70,41 @@
         
         <!-- Contact Form -->
         <div class="col-lg-7">
-          <div class="bg-white border rounded p-4 p-md-5">
-            <h4 class="font-heading mb-4">Send Us a Message</h4>
+          <div class="bg-white border rounded p-4 p-md-5 shadow-sm">
+            <h4 class="font-heading mb-3">Send Us a Message</h4>
+            <p class="text-muted small mb-4">Fill out the form below and our team will get back to you within 24 hours.</p>
             
             <form id="contactForm">
               <div class="row g-3">
                 <div class="col-md-6">
                   <label class="form-label font-heading small fw-bold">Full Name *</label>
-                  <input type="text" class="form-control" required placeholder="Your Name">
+                  <input type="text" id="contactName" class="form-control" required placeholder="e.g. Biodun Johnson">
                 </div>
                 <div class="col-md-6">
                   <label class="form-label font-heading small fw-bold">Email Address *</label>
-                  <input type="email" class="form-control" required placeholder="name@example.com">
+                  <input type="email" id="contactEmail" class="form-control" required placeholder="name@example.com">
                 </div>
                 <div class="col-md-6">
                   <label class="form-label font-heading small fw-bold">Phone / WhatsApp</label>
-                  <input type="tel" class="form-control" placeholder="+234 800 000 0000">
+                  <input type="tel" id="contactPhone" class="form-control" placeholder="+234 800 000 0000">
                 </div>
                 <div class="col-md-6">
-                  <label class="form-label font-heading small fw-bold">Subject</label>
-                  <select class="form-select">
+                  <label class="form-label font-heading small fw-bold">Inquiry Subject *</label>
+                  <select id="contactSubject" class="form-select" required>
                     <option value="General Inquiry">General Inquiry</option>
-                    <option value="Order Tracking">Order Tracking</option>
-                    <option value="Sizing Help">Sizing Help</option>
-                    <option value="Custom Order">Custom Order</option>
+                    <option value="Order Tracking">Order Tracking & Delivery</option>
+                    <option value="Sizing Help">Sizing & Fit Advice</option>
+                    <option value="Custom Order">Bespoke Custom Order</option>
                   </select>
                 </div>
                 <div class="col-12">
                   <label class="form-label font-heading small fw-bold">Message *</label>
-                  <textarea class="form-control" rows="4" required placeholder="How can we help you today?"></textarea>
+                  <textarea id="contactMessage" class="form-control" rows="4" required placeholder="How can we assist you today?"></textarea>
                 </div>
                 <div class="col-12">
-                  <button type="submit" class="btn btn-bsg-primary py-3 px-4 fw-bold">SEND MESSAGE</button>
+                  <button type="submit" class="btn btn-bsg-primary py-3 px-4 fw-bold">
+                    <i class="bi bi-send me-2"></i> SEND MESSAGE
+                  </button>
                 </div>
               </div>
             </form>
@@ -107,37 +113,37 @@
 
         <!-- Contact Information Sidebar -->
         <div class="col-lg-5">
-          <div class="bg-white border rounded p-4 p-md-5">
-            <h4 class="font-heading mb-4">Customer Care</h4>
+          <div class="bg-white border rounded p-4 p-md-5 shadow-sm">
+            <h4 class="font-heading mb-4">Customer Support</h4>
 
             <div class="d-flex align-items-start gap-3 mb-4">
-              <div class="p-3 bg-bsg-bg-light rounded text-bsg-burgundy fs-4"><i class="bi bi-geo-alt"></i></div>
+              <div class="p-3 bg-bsg-bg-light rounded text-bsg-burgundy fs-4 border"><i class="bi bi-geo-alt"></i></div>
               <div>
                 <strong class="d-block font-heading">Studio Address</strong>
-                <span class="text-muted small">Victoria Island, Lagos State, Nigeria [Placeholder]</span>
+                <span class="text-muted small">Victoria Island, Lagos State, Nigeria</span>
               </div>
             </div>
 
             <div class="d-flex align-items-start gap-3 mb-4">
-              <div class="p-3 bg-bsg-bg-light rounded text-bsg-burgundy fs-4"><i class="bi bi-telephone"></i></div>
+              <div class="p-3 bg-bsg-bg-light rounded text-bsg-burgundy fs-4 border"><i class="bi bi-telephone"></i></div>
               <div>
                 <strong class="d-block font-heading">Phone & WhatsApp</strong>
-                <span class="text-muted small">+234 (0) 800 000 0000 [Placeholder]</span>
+                <span class="text-muted small">+234 (0) 800 000 0000</span>
               </div>
             </div>
 
             <div class="d-flex align-items-start gap-3 mb-4">
-              <div class="p-3 bg-bsg-bg-light rounded text-bsg-burgundy fs-4"><i class="bi bi-envelope"></i></div>
+              <div class="p-3 bg-bsg-bg-light rounded text-bsg-burgundy fs-4 border"><i class="bi bi-envelope"></i></div>
               <div>
                 <strong class="d-block font-heading">Email Support</strong>
-                <span class="text-muted small">support@biodunstylegrid.com [Placeholder]</span>
+                <span class="text-muted small">support@biodunstylegrid.com</span>
               </div>
             </div>
 
-            <hr>
+            <hr class="my-4">
 
-            <h6 class="font-heading mb-3">Follow Us</h6>
-            <div class="d-flex gap-3 fs-5 text-dark">
+            <h6 class="font-heading mb-3">Connect With Us</h6>
+            <div class="d-flex gap-2 flex-wrap fs-6">
               <a href="#" class="btn btn-outline-dark btn-sm"><i class="bi bi-instagram me-1"></i> Instagram</a>
               <a href="#" class="btn btn-outline-dark btn-sm"><i class="bi bi-facebook me-1"></i> Facebook</a>
               <a href="#" class="btn btn-outline-dark btn-sm"><i class="bi bi-whatsapp me-1"></i> WhatsApp</a>
@@ -149,10 +155,90 @@
     </div>
   </section>
 
+  <!-- Shipping & Returns Accordion Reference -->
+  <section id="shipping" class="py-5 bg-bsg-bg-light border-top">
+    <div class="container" style="max-width: 800px;">
+      <div class="text-center mb-4">
+        <h3 class="font-heading mb-1">SHIPPING & RETURNS INFORMATION</h3>
+        <p class="text-muted small">Frequently asked customer care details</p>
+      </div>
+
+      <div class="accordion border rounded bg-white shadow-sm" id="customerCareAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button font-heading" type="button" data-bs-toggle="collapse" data-bs-target="#ship1">
+              What are the delivery timelines within Nigeria?
+            </button>
+          </h2>
+          <div id="ship1" class="accordion-collapse collapse show" data-bs-parent="#customerCareAccordion">
+            <div class="accordion-body text-muted small">
+              Lagos express delivery takes 1 - 2 business days. Nationwide delivery across other states in Nigeria takes 3 - 5 business days via express courier. Free shipping applies on orders above ₦150,000.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item" id="returns">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed font-heading" type="button" data-bs-toggle="collapse" data-bs-target="#ship2">
+              What is your return & exchange policy?
+            </button>
+          </h2>
+          <div id="ship2" class="accordion-collapse collapse" data-bs-parent="#customerCareAccordion">
+            <div class="accordion-body text-muted small">
+              We offer exchanges for unworn, unwashed garments in original packaging within 7 days of receipt if the item has sizing mismatches. Custom bespoke orders are tailored to measurement and non-refundable.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="footer-bsg">
-    <div class="container text-center small text-muted">
-      <p class="mb-0">© 2026 BIODUN STYLE GRID (BSG). Prototype Netlify Build.</p>
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-lg-4">
+          <img src="assets/logo-white.svg" alt="BSG Emblem" height="48" class="mb-3">
+          <p class="small text-muted mb-4" style="max-width: 320px;">
+            BIODUN STYLE GRID (BSG) - Nigerian men's native-wear fashion brand. Simple Nigerian wear, thoughtfully made for the modern man.
+          </p>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <h6>NAVIGATION</h6>
+          <ul class="list-unstyled d-flex flex-column gap-2">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop All</a></li>
+            <li><a href="collections.html">Collections</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-3">
+          <h6>CUSTOMER CARE</h6>
+          <ul class="list-unstyled d-flex flex-column gap-2">
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="contact.html#shipping">Shipping & Delivery</a></li>
+            <li><a href="contact.html#returns">Returns & Exchanges</a></li>
+            <li><a href="about.html#size-guide">Size Guide</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-3">
+          <h6>ACCOUNT & ADMIN</h6>
+          <ul class="list-unstyled d-flex flex-column gap-2 mb-3">
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Create Account</a></li>
+            <li><a href="cart.html">My Cart</a></li>
+            <li><a href="admin.html" class="text-muted"><i class="bi bi-shield-lock me-1"></i> Admin Portal</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-top border-secondary pt-4 text-center small text-muted">
+        <p class="mb-0">© 2026 BIODUN STYLE GRID (BSG). All Rights Reserved. Deployed to Netlify.</p>
+      </div>
     </div>
   </footer>
 
@@ -164,7 +250,8 @@
   <script>
     document.getElementById('contactForm')?.addEventListener('submit', (e) => {
       e.preventDefault();
-      showBsgToast("Thank you for contacting BIODUN STYLE GRID! We will respond shortly.", "success");
+      const name = document.getElementById('contactName')?.value.trim() || 'Valued Client';
+      showBsgToast(`Thank you, ${name}! Your message has been received by BIODUN STYLE GRID support.`, "success");
       e.target.reset();
     });
   </script>

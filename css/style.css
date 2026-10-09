@@ -426,3 +426,121 @@ a:hover {
     height: 320px;
   }
 }
+
+/* ==========================================================================
+   FULL-PAGE SCROLL ANIMATIONS & DYNAMIC MOTION SYSTEM
+   ========================================================================== */
+
+/* Base Scroll Item */
+.bsg-scroll-item {
+  opacity: 0;
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+/* Animation Styles */
+[data-bsg-animate="drop-top"] {
+  transform: translateY(-110px) scale(0.95);
+}
+
+[data-bsg-animate="ground-drop"] {
+  transform: translateY(-70px) rotateX(10deg);
+}
+
+[data-bsg-animate="reveal-up"] {
+  transform: translateY(50px);
+}
+
+[data-bsg-animate="slide-left"] {
+  transform: translateX(-70px);
+}
+
+[data-bsg-animate="slide-right"] {
+  transform: translateX(70px);
+}
+
+[data-bsg-animate="zoom-in"] {
+  transform: scale(0.85);
+}
+
+/* Active In-View State */
+.bsg-scroll-item.bsg-in-view {
+  opacity: 1 !important;
+  transform: translateY(0) translateX(0) scale(1) rotateX(0deg) !important;
+}
+
+/* Stagger Delays */
+[data-bsg-delay="1"] { transition-delay: 0.12s; }
+[data-bsg-delay="2"] { transition-delay: 0.24s; }
+[data-bsg-delay="3"] { transition-delay: 0.36s; }
+[data-bsg-delay="4"] { transition-delay: 0.48s; }
+[data-bsg-delay="5"] { transition-delay: 0.60s; }
+
+/* Continuous Ambient Motion */
+@keyframes floatSubtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes swaySubtle {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(2deg); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.03); filter: brightness(1.05); }
+}
+
+.bsg-float {
+  animation: floatSubtle 4.8s ease-in-out infinite;
+}
+
+.bsg-sway {
+  animation: swaySubtle 6s ease-in-out infinite;
+}
+
+.bsg-pulse {
+  animation: pulseGlow 3.5s ease-in-out infinite;
+}
+
+/* Enhanced Button Interactions & Micro-Animations */
+.btn-bsg-primary, .btn-bsg-secondary, .btn-bsg-gold {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-bsg-primary:hover, .btn-bsg-secondary:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 22px rgba(106, 18, 34, 0.25);
+}
+
+.btn-bsg-gold:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 22px rgba(185, 139, 54, 0.3);
+}
+
+.btn i.bi-arrow-right {
+  display: inline-block;
+  transition: transform 0.25s ease-in-out;
+}
+
+.btn:hover i.bi-arrow-right {
+  transform: translateX(6px);
+}
+
+/* Accessibility: Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .bsg-scroll-item {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .bsg-float, .bsg-sway, .bsg-pulse {
+    animation: none !important;
+  }
+}
+
+
+
