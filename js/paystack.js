@@ -108,7 +108,7 @@ function launchPaystackTestModal(params) {
           </div>
           
           <div class="modal-body p-4 text-center">
-            <img src="assets/logo.svg" alt="BSG Logo" height="38" class="mb-3">
+            <img src="assets/logo.svg" alt="BSG Logo" height="90" class="mb-3">
             <div class="display-6 font-heading fw-bold text-bsg-burgundy">₦${params.amount.toLocaleString()}</div>
             <p class="text-muted small mb-3">${params.email}</p>
             <div class="p-2 bg-light rounded font-monospace small mb-4">Ref: ${params.reference}</div>

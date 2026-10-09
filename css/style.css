@@ -129,10 +129,11 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Dark Navbar Matching Footer Theme & Gold Active Underline */
 .navbar-bsg {
-  background-color: var(--bsg-white);
-  border-bottom: 1px solid #EAEAEA;
-  padding: 16px 0;
+  background-color: var(--bsg-black) !important; /* Matches footer dark background */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+  padding: 14px 0;
   position: sticky;
   top: 0;
   z-index: 1030;
@@ -140,26 +141,60 @@ a:hover {
 
 .nav-link-bsg {
   font-family: var(--font-heading);
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  color: var(--bsg-black) !important;
-  margin: 0 12px;
-  padding: 6px 0;
+  color: var(--bsg-white) !important; /* White text on dark navbar */
+  margin: 0 14px;
+  padding: 8px 0;
   position: relative;
+  transition: var(--bsg-transition);
 }
 
-.nav-link-bsg:hover, .nav-link-bsg.active {
-  color: var(--bsg-burgundy) !important;
+.nav-link-bsg:hover {
+  color: var(--bsg-gold) !important;
 }
 
+.nav-link-bsg.active {
+  color: var(--bsg-white) !important;
+  font-weight: 700;
+}
+
+/* Active Nav Item Underline in GOLD (matching logo color) */
 .nav-link-bsg.active::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   left: 0;
   width: 100%;
-  height: 2px;
-  background-color: var(--bsg-burgundy);
+  height: 2.5px;
+  background-color: var(--bsg-gold) !important; /* Solid Gold Underline */
+  border-radius: 2px;
+}
+
+.btn-bsg-gold {
+  background-color: var(--bsg-gold) !important;
+  color: var(--bsg-white) !important;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 8px 18px;
+  border-radius: var(--bsg-border-radius);
+  border: 1px solid var(--bsg-gold);
+  transition: var(--bsg-transition);
+}
+
+.btn-bsg-gold:hover {
+  background-color: #a3782b !important;
+  border-color: #a3782b !important;
+  color: var(--bsg-white) !important;
+}
+
+.navbar-bsg .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+.navbar-bsg .navbar-toggler-icon {
+  filter: invert(1);
 }
 
 .cart-count-badge {
@@ -544,3 +579,49 @@ a:hover {
 
 
 
+
+/* Brand Logo Sizing - Enlarged 2.5x to 3x */
+.bsg-logo-header {
+  height: 96px;
+  max-height: 110px;
+  width: auto;
+  object-fit: contain;
+  transition: var(--bsg-transition);
+}
+
+.bsg-logo-footer {
+  height: 120px;
+  max-height: 140px;
+  width: auto;
+  object-fit: contain;
+  transition: var(--bsg-transition);
+}
+
+
+.navbar-luxury {
+  background-color: var(--bsg-black) !important;
+  border-bottom: 1px solid rgba(218, 182, 110, 0.3) !important;
+  padding: 14px 0;
+}
+.navbar-luxury .nav-link {
+  color: var(--bsg-white) !important;
+  font-weight: 600;
+}
+.navbar-luxury .nav-link:hover, .navbar-luxury .nav-link.active {
+  color: var(--bsg-gold) !important;
+}
+
+
+/* Ensure ALL icons in Navbar match White Link Text */
+.navbar-bsg i,
+.navbar-bsg .bi,
+.navbar-bsg [class*="bi-"],
+.navbar-bsg .btn-link,
+.navbar-bsg .nav-link-bsg i,
+.navbar-bsg .nav-account-link i,
+.navbar-luxury i,
+.navbar-luxury [data-lucide] {
+  color: var(--bsg-white) !important;
+  fill: var(--bsg-white) !important;
+  stroke: var(--bsg-white) !important;
+}

@@ -22,10 +22,10 @@
   <nav class="navbar navbar-expand-lg navbar-bsg">
     <div class="container">
       <a class="navbar-brand me-4 d-flex align-items-center" href="index.html">
-        <img src="assets/logo.svg" alt="BIODUN STYLE GRID Emblem" height="48">
+        <img class="bsg-logo-header" src="assets/logo.svg" alt="BIODUN STYLE GRID Emblem" height="96">
       </a>
       <div class="d-flex align-items-center gap-2 d-lg-none ms-auto me-2">
-        <a href="cart.html" class="btn btn-link text-dark p-1 position-relative">
+        <a href="cart.html" class="btn btn-link text-white p-1 position-relative">
           <i class="bi bi-bag fs-5"></i>
           <span class="cart-count-badge position-absolute top-0 start-100 translate-middle">0</span>
         </a>
@@ -44,8 +44,8 @@
         </ul>
 
         <div class="d-none d-lg-flex align-items-center gap-3">
-          <a href="login.html" class="nav-link-bsg text-dark nav-account-link me-2"><i class="bi bi-person me-1"></i> Account</a>
-          <a href="cart.html" class="btn btn-bsg-primary btn-sm py-2 px-3 d-flex align-items-center gap-2">
+          <a href="login.html" class="nav-link-bsg text-white nav-account-link me-2"><i class="bi bi-person me-1"></i> Account</a>
+          <a href="cart.html" class="btn btn-bsg-gold btn-sm py-2 px-3 d-flex align-items-center gap-2">
             <i class="bi bi-bag"></i> Cart <span class="badge bg-white text-dark rounded-circle cart-count-badge">0</span>
           </a>
         </div>
@@ -174,7 +174,7 @@
         </div>
 
         <div class="modal-footer bg-light py-2">
-          <button type="button" class="btn btn-bsg-primary btn-sm px-4" data-bs-dismiss="modal">Got It, Close Guide</button>
+          <button type="button" class="btn btn-bsg-gold btn-sm px-4" data-bs-dismiss="modal">Got It, Close Guide</button>
         </div>
       </div>
     </div>
@@ -242,7 +242,7 @@
         document.getElementById('productDetailContainer').innerHTML = `
           <div class="text-center py-5">
             <h3>Product Not Found</h3>
-            <a href="shop.html" class="btn btn-bsg-primary mt-3">Back to Shop</a>
+            <a href="shop.html" class="btn btn-bsg-gold mt-3">Back to Shop</a>
           </div>
         `;
         return;
@@ -326,7 +326,7 @@
               <button onclick="window.handleProductAddToCart()" class="btn btn-bsg-secondary py-3 fw-bold">
                 <i class="bi bi-bag-plus me-2"></i> ADD TO CART
               </button>
-              <button onclick="window.handleProductBuyNow()" class="btn btn-bsg-primary py-3 fw-bold">
+              <button onclick="window.handleProductBuyNow()" class="btn btn-bsg-gold py-3 fw-bold">
                 <i class="bi bi-credit-card me-2"></i> BUY NOW
               </button>
             </div>
