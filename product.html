@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details | BIODUN STYLE GRID</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar text-center">
+    <div class="container">
+      <span><i class="bi bi-truck me-1"></i> FREE DELIVERY IN NIGERIA ON ORDERS OVER ₦150,000</span>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-bsg">
+    <div class="container">
+      <a class="navbar-brand me-4 d-flex align-items-center" href="index.html">
+        <img src="assets/logo.svg" alt="BIODUN STYLE GRID Emblem" height="48">
+      </a>
+      <div class="d-flex align-items-center gap-2 d-lg-none ms-auto me-2">
+        <a href="cart.html" class="btn btn-link text-dark p-1 position-relative">
+          <i class="bi bi-bag fs-5"></i>
+          <span class="cart-count-badge position-absolute top-0 start-100 translate-middle">0</span>
+        </a>
+      </div>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#bsgNavMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="bsgNavMenu">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-center">
+          <li class="nav-item"><a class="nav-link nav-link-bsg" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-bsg active" href="shop.html">Shop</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-bsg" href="collections.html">Collections</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-bsg" href="about.html">About</a></li>
+        </ul>
+
+        <div class="d-none d-lg-flex align-items-center gap-3">
+          <a href="login.html" class="nav-link-bsg text-dark nav-account-link me-2"><i class="bi bi-person me-1"></i> Account</a>
+          <a href="cart.html" class="btn btn-bsg-primary btn-sm py-2 px-3 d-flex align-items-center gap-2">
+            <i class="bi bi-bag"></i> Cart <span class="badge bg-white text-dark rounded-circle cart-count-badge">0</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Product Detail Content -->
+  <section class="py-5">
+    <div class="container" id="productDetailContainer">
+      <!-- Populated via JS -->
+    </div>
+  </section>
+
+  <!-- INTERACTIVE SIZE GUIDE MODAL -->
+  <div class="modal fade" id="sizeGuideModal" tabindex="-1" aria-labelledby="sizeGuideModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg">
+        <div class="modal-header bg-bsg-black text-white">
+          <div class="d-flex align-items-center gap-2">
+            <i class="bi bi-ruler text-bsg-gold fs-4"></i>
+            <h5 class="modal-title font-heading mb-0 text-white" id="sizeGuideModalLabel">BIODUN STYLE GRID SIZE GUIDE</h5>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        <div class="modal-body p-4">
+          <p class="text-muted small mb-4">
+            Use this comprehensive measurement chart to find your perfect fit for Nigerian native wear (Senators, Kaftans, and Agbadas).
+          </p>
+
+          <!-- Size Table -->
+          <div class="table-responsive bg-light rounded border mb-4">
+            <table class="table align-middle text-center mb-0 small">
+              <thead class="bg-bsg-burgundy text-white font-heading">
+                <tr>
+                  <th>SIZE</th>
+                  <th>CHEST (INCHES)</th>
+                  <th>SHOULDER (INCHES)</th>
+                  <th>WAIST (INCHES)</th>
+                  <th>TOP LENGTH (INCHES)</th>
+                  <th>TROUSER LENGTH (INCHES)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong class="text-bsg-burgundy">Small (S)</strong></td>
+                  <td>38 - 40"</td>
+                  <td>17.5"</td>
+                  <td>30 - 32"</td>
+                  <td>36"</td>
+                  <td>40"</td>
+                </tr>
+                <tr>
+                  <td><strong class="text-bsg-burgundy">Medium (M)</strong></td>
+                  <td>41 - 43"</td>
+                  <td>18.5"</td>
+                  <td>33 - 35"</td>
+                  <td>38"</td>
+                  <td>41"</td>
+                </tr>
+                <tr>
+                  <td><strong class="text-bsg-burgundy">Large (L)</strong></td>
+                  <td>44 - 46"</td>
+                  <td>19.5"</td>
+                  <td>36 - 38"</td>
+                  <td>40"</td>
+                  <td>42"</td>
+                </tr>
+                <tr>
+                  <td><strong class="text-bsg-burgundy">X-Large (XL)</strong></td>
+                  <td>47 - 49"</td>
+                  <td>20.5"</td>
+                  <td>39 - 41"</td>
+                  <td>42"</td>
+                  <td>43"</td>
+                </tr>
+                <tr>
+                  <td><strong class="text-bsg-burgundy">2X-Large (XXL)</strong></td>
+                  <td>50 - 52"</td>
+                  <td>21.5"</td>
+                  <td>42 - 44"</td>
+                  <td>44"</td>
+                  <td>44"</td>
+                </tr>
+                <tr>
+                  <td><strong class="text-bsg-burgundy">3X-Large (XXXL)</strong></td>
+                  <td>53 - 55"</td>
+                  <td>22.5"</td>
+                  <td>45 - 47"</td>
+                  <td>45"</td>
+                  <td>45"</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Step-by-Step How to Measure Instructions -->
+          <h6 class="font-heading mb-3"><i class="bi bi-info-circle text-bsg-burgundy me-2"></i> How to Measure Yourself</h6>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="p-3 bg-light rounded border h-100">
+                <strong class="d-block font-heading text-dark mb-1">1. Chest Measurement</strong>
+                <p class="small text-muted mb-0">Wrap the tape measure around the fullest part of your chest, keeping tape level under your arms.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="p-3 bg-light rounded border h-100">
+                <strong class="d-block font-heading text-dark mb-1">2. Shoulder Width</strong>
+                <p class="small text-muted mb-0">Measure horizontally across your upper back from the outer edge of one shoulder bone to the other.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="p-3 bg-light rounded border h-100">
+                <strong class="d-block font-heading text-dark mb-1">3. Waist Measurement</strong>
+                <p class="small text-muted mb-0">Measure around your natural waistline where your native trousers sit comfortably.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="p-3 bg-light rounded border h-100">
+                <strong class="d-block font-heading text-dark mb-1">4. Top & Trouser Length</strong>
+                <p class="small text-muted mb-0">Measure from the top of your neck shoulder seam down to your preferred knee or ankle length.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer bg-light py-2">
+          <button type="button" class="btn btn-bsg-primary btn-sm px-4" data-bs-dismiss="modal">Got It, Close Guide</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-bsg">
+    <div class="container text-center small text-muted">
+      <p class="mb-0">© 2026 BIODUN STYLE GRID (BSG). Prototype Netlify Build.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/app.js"></script>
+
+  <script>
+    let currentProduct = null;
+    let selectedSize = '';
+    let selectedColour = '';
+    let itemQuantity = 1;
+
+    // Global adjustQty attached directly to window
+    window.adjustQty = function(delta) {
+      itemQuantity = Math.max(1, itemQuantity + delta);
+      const input = document.getElementById('qtyInput');
+      if (input) {
+        input.value = itemQuantity;
+      }
+    };
+
+    window.selectProductSize = function(size) {
+      selectedSize = size;
+      document.getElementById('sizeAlertText')?.classList.add('d-none');
+      renderProductPage();
+    };
+
+    window.handleProductAddToCart = function() {
+      if (!selectedSize) {
+        document.getElementById('sizeAlertText')?.classList.remove('d-none');
+        showBsgToast("Please select a size.", "danger");
+        return;
+      }
+      addToCart(currentProduct.id, selectedSize, selectedColour, itemQuantity);
+    };
+
+    window.handleProductBuyNow = function() {
+      if (!selectedSize) {
+        document.getElementById('sizeAlertText')?.classList.remove('d-none');
+        showBsgToast("Please select a size.", "danger");
+        return;
+      }
+      addToCart(currentProduct.id, selectedSize, selectedColour, itemQuantity);
+      window.location.href = 'checkout.html';
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = urlParams.get('id') || 1;
+      currentProduct = getProductById(productId);
+
+      if (!currentProduct) {
+        document.getElementById('productDetailContainer').innerHTML = `
+          <div class="text-center py-5">
+            <h3>Product Not Found</h3>
+            <a href="shop.html" class="btn btn-bsg-primary mt-3">Back to Shop</a>
+          </div>
+        `;
+        return;
+      }
+
+      selectedColour = currentProduct.colour;
+      renderProductPage();
+    });
+
+    function renderProductPage() {
+      const p = currentProduct;
+      const container = document.getElementById('productDetailContainer');
+
+      container.innerHTML = `
+        <div class="row g-5">
+          <!-- LEFT: Large Product Image -->
+          <div class="col-lg-6">
+            <div class="border rounded overflow-hidden bg-light">
+              <img src="${p.image}" alt="${p.name}" class="w-100" style="max-height: 600px; object-fit: cover;">
+            </div>
+          </div>
+
+          <!-- RIGHT: Product Info & Selectors -->
+          <div class="col-lg-6">
+            <div class="text-muted small mb-1">${p.category}</div>
+            <h1 class="font-heading mb-2">${p.name}</h1>
+            
+            <div class="mb-3">
+              <span class="fs-3 font-heading fw-bold text-bsg-burgundy">₦${p.price.toLocaleString()}</span>
+              ${p.oldPrice ? `<span class="fs-5 text-muted text-decoration-line-through ms-2">₦${p.oldPrice.toLocaleString()}</span>` : ''}
+              ${p.discount ? `<span class="badge bg-bsg-burgundy ms-2">${p.discount}</span>` : ''}
+            </div>
+
+            <p class="text-muted mb-4">${p.description}</p>
+
+            <!-- COLOUR SELECTION -->
+            <div class="mb-4">
+              <label class="form-label font-heading fw-bold small text-uppercase">
+                COLOUR: <span class="text-dark" id="selectedColourText">${selectedColour}</span>
+              </label>
+              <div class="d-flex align-items-center gap-2">
+                <span class="color-swatch active" style="background-color: ${p.colourHex};" title="${p.colour}"></span>
+                <span class="small text-muted">Primary Shade: ${p.colour}</span>
+              </div>
+            </div>
+
+            <!-- SIZE SELECTION (MANDATORY) -->
+            <div class="mb-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <label class="form-label font-heading fw-bold small text-uppercase mb-0">
+                  SELECT SIZE <span class="text-danger">*</span>
+                </label>
+                <button type="button" class="btn btn-link p-0 small text-bsg-burgundy text-decoration-underline" data-bs-toggle="modal" data-bs-target="#sizeGuideModal">
+                  <i class="bi bi-ruler me-1"></i> Size Guide
+                </button>
+              </div>
+
+              <div class="d-flex gap-2 flex-wrap size-btn-group" id="sizeOptionsGroup">
+                ${p.sizes.map(size => `
+                  <button type="button" class="btn btn-size ${size === selectedSize ? 'active' : ''}" 
+                          onclick="window.selectProductSize('${size}')">${size}</button>
+                `).join('')}
+              </div>
+              <div id="sizeAlertText" class="text-danger small mt-2 d-none">
+                <i class="bi bi-exclamation-circle me-1"></i> Please select a size before proceeding.
+              </div>
+            </div>
+
+            <!-- QUANTITY SELECTOR WITH WORKING INCREMENT & DECREMENT BUTTONS -->
+            <div class="mb-4">
+              <label class="form-label font-heading fw-bold small text-uppercase d-block mb-2">QUANTITY</label>
+              <div class="d-flex align-items-center gap-2" style="width: 170px;">
+                <button type="button" id="btnQtyMinus" class="btn btn-outline-dark fw-bold px-3 py-2 fs-5" style="width: 48px; height: 48px;" onclick="window.adjustQty(-1)">-</button>
+                <input type="text" id="qtyInput" class="form-control text-center fw-bold fs-5" style="width: 60px; height: 48px; background-color: #ffffff !important; color: #010101 !important; border: 1.5px solid #010101;" value="${itemQuantity}" readonly>
+                <button type="button" id="btnQtyPlus" class="btn btn-outline-dark fw-bold px-3 py-2 fs-5" style="width: 48px; height: 48px;" onclick="window.adjustQty(1)">+</button>
+              </div>
+            </div>
+
+            <!-- CTAs -->
+            <div class="d-grid gap-3 mb-4">
+              <button onclick="window.handleProductAddToCart()" class="btn btn-bsg-secondary py-3 fw-bold">
+                <i class="bi bi-bag-plus me-2"></i> ADD TO CART
+              </button>
+              <button onclick="window.handleProductBuyNow()" class="btn btn-bsg-primary py-3 fw-bold">
+                <i class="bi bi-credit-card me-2"></i> BUY NOW
+              </button>
+            </div>
+
+            <!-- Shipping Guarantee -->
+            <div class="p-3 bg-light rounded border small">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <i class="bi bi-truck text-bsg-burgundy fs-5"></i>
+                <strong>Nigeria-Wide Delivery</strong>
+              </div>
+              <p class="text-muted mb-0 small">Dispatched within 24-48 hours from Lagos. 100% Satisfaction Guarantee.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- BELOW: Product Tabs / Information -->
+        <div class="mt-5 pt-4 border-top">
+          <ul class="nav nav-tabs border-bottom mb-4" id="productTabs" role="tablist">
+            <li class="nav-item">
+              <button class="nav-link active font-heading fw-bold text-dark" id="details-tab" data-bs-toggle="tab" data-bs-target="#details-tab-pane">Product Details</button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-link font-heading fw-bold text-dark" id="shipping-tab" data-bs-toggle="tab" data-bs-target="#shipping-tab-pane">Shipping Information</button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-link font-heading fw-bold text-dark" id="returns-tab" data-bs-toggle="tab" data-bs-target="#returns-tab-pane">Returns & Exchanges</button>
+            </li>
+          </ul>
+
+          <div class="tab-content" id="productTabContent">
+            <div class="tab-pane fade show active text-muted" id="details-tab-pane">
+              <p>${p.description}</p>
+              <ul>
+                <li>Fabric: High-grade cotton & cashmere blend</li>
+                <li>Fit: Tailored traditional fit</li>
+                <li>Care: Dry clean or cold hand wash</li>
+                <li>Made in Lagos, Nigeria</li>
+              </ul>
+            </div>
+            <div class="tab-pane fade text-muted" id="shipping-tab-pane">
+              <p>Standard delivery across Lagos takes 24 hours. Inter-state delivery within Nigeria takes 2-4 business days via DHL/GIG Logistics.</p>
+            </div>
+            <div class="tab-pane fade text-muted" id="returns-tab-pane">
+              <p>We accept exchanges on unworn items within 7 days of delivery. Custom bespoke alterations are supported via our Lagos office.</p>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+  </script>
+</body>
+</html>

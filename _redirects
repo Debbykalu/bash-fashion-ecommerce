@@ -1,0 +1,5 @@
+# Netlify Redirect Rules for BashFodio E-Commerce
+/shop        /shop.html        200
+/bespoke     /bespoke.html     200
+/checkout    /checkout.html    200
+/admin       /admin.html       200

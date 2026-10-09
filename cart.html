@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Shopping Cart | BIODUN STYLE GRID</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-bsg">
+    <div class="container">
+      <a class="navbar-brand me-4" href="index.html">
+        <img src="assets/logo.svg" alt="BIODUN STYLE GRID" height="42">
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#bsgNavMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="bsgNavMenu">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-center">
+          <li class="nav-item"><a class="nav-link nav-link-bsg" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-bsg" href="shop.html">Shop</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-bsg" href="collections.html">Collections</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-bsg" href="about.html">About</a></li>
+        </ul>
+        <div class="d-none d-lg-flex align-items-center gap-3">
+          <a href="login.html" class="nav-link-bsg text-dark nav-account-link me-2"><i class="bi bi-person me-1"></i> Account</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Cart Content Header -->
+  <section class="py-4 bg-bsg-bg-light border-bottom">
+    <div class="container">
+      <h1 class="font-heading mb-1">YOUR SHOPPING CART</h1>
+      <p class="text-muted mb-0">Review your selected native wear items before checkout</p>
+    </div>
+  </section>
+
+  <!-- Cart Body -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-5" id="cartContentRow">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-bsg">
+    <div class="container text-center small text-muted">
+      <p class="mb-0">© 2026 BIODUN STYLE GRID (BSG). Prototype Netlify Build.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/app.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', renderCartPage);
+
+    function renderCartPage() {
+      const cart = getCart();
+      const row = document.getElementById('cartContentRow');
+
+      if (cart.length === 0) {
+        row.innerHTML = `
+          <div class="col-12 text-center py-5">
+            <i class="bi bi-bag-x text-muted display-3 mb-3 d-block"></i>
+            <h3 class="font-heading">Your Cart is Currently Empty</h3>
+            <p class="text-muted mb-4">Discover our classic senators, kaftans, and native wear collections.</p>
+            <a href="shop.html" class="btn btn-bsg-primary px-4 py-2">EXPLORE SHOP</a>
+          </div>
+        `;
+        return;
+      }
+
+      let cartTableHtml = `
+        <div class="col-lg-8">
+          <div class="table-responsive bg-white border rounded">
+            <table class="table align-middle mb-0">
+              <thead class="bg-bsg-bg-light font-heading small">
+                <tr>
+                  <th class="ps-3 py-3">PRODUCT</th>
+                  <th class="py-3">SIZE / COLOR</th>
+                  <th class="py-3">PRICE</th>
+                  <th class="py-3">QUANTITY</th>
+                  <th class="py-3">SUBTOTAL</th>
+                  <th class="pe-3 py-3"></th>
+                </tr>
+              </thead>
+              <tbody>
+      `;
+
+      cart.forEach((item, index) => {
+        const itemSubtotal = item.price * item.qty;
+        cartTableHtml += `
+          <tr>
+            <td class="ps-3 py-3">
+              <div class="d-flex align-items-center gap-3">
+                <img src="${item.image}" alt="${item.name}" style="width: 55px; height: 70px; object-fit: cover;" class="rounded">
+                <div>
+                  <h6 class="font-heading mb-0" style="font-size: 0.95rem;">${item.name}</h6>
+                </div>
+              </div>
+            </td>
+            <td>
+              <span class="badge bg-bsg-burgundy">${item.size}</span>
+              <span class="badge bg-secondary">${item.colour}</span>
+            </td>
+            <td class="fw-bold">₦${item.price.toLocaleString()}</td>
+            <td>
+              <div class="d-flex align-items-center gap-1" style="width: 100px;">
+                <button onclick="updateCartQty(${index}, ${item.qty - 1})" class="btn btn-outline-secondary btn-sm px-2 py-0">-</button>
+                <span class="fw-bold px-2">${item.qty}</span>
+                <button onclick="updateCartQty(${index}, ${item.qty + 1})" class="btn btn-outline-secondary btn-sm px-2 py-0">+</button>
+              </div>
+            </td>
+            <td class="fw-bold text-bsg-burgundy">₦${itemSubtotal.toLocaleString()}</td>
+            <td class="pe-3 text-end">
+              <button onclick="removeFromCart(${index}); renderCartPage();" class="btn btn-link text-danger p-0" title="Remove Item">
+                <i class="bi bi-trash"></i>
+              </button>
+            </td>
+          </tr>
+        `;
+      });
+
+      cartTableHtml += `
+              </tbody>
+            </table>
+          </div>
+          <div class="d-flex justify-content-between mt-3">
+            <a href="shop.html" class="btn btn-bsg-secondary"><i class="bi bi-arrow-left me-1"></i> Continue Shopping</a>
+            <button onclick="clearCart(); renderCartPage();" class="btn btn-outline-danger btn-sm">Clear Cart</button>
+          </div>
+        </div>
+      `;
+
+      const totals = calculateCartTotals();
+      const summaryHtml = `
+        <div class="col-lg-4">
+          <div class="bg-white border rounded p-4">
+            <h5 class="font-heading mb-4 border-bottom pb-2">ORDER SUMMARY</h5>
+            
+            <div class="d-flex justify-content-between mb-2">
+              <span class="text-muted">Subtotal:</span>
+              <span class="fw-bold">₦${totals.subtotal.toLocaleString()}</span>
+            </div>
+            <div class="d-flex justify-content-between mb-3">
+              <span class="text-muted">Delivery (Flat Fee):</span>
+              <span class="fw-bold text-bsg-burgundy">₦${totals.delivery.toLocaleString()}</span>
+            </div>
+            
+            <hr>
+
+            <div class="d-flex justify-content-between fs-5 fw-bold mb-4">
+              <span>Total Payable:</span>
+              <span class="text-bsg-burgundy">₦${totals.total.toLocaleString()}</span>
+            </div>
+
+            <a href="checkout.html" class="btn btn-bsg-primary w-100 py-3 fw-bold text-center d-block">
+              PROCEED TO CHECKOUT <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+
+            <div class="mt-3 text-center small text-muted">
+              <i class="bi bi-shield-check text-success me-1"></i> Secure Paystack Payment Supported
+            </div>
+          </div>
+        </div>
+      `;
+
+      row.innerHTML = cartTableHtml + summaryHtml;
+    }
+  </script>
+</body>
+</html>

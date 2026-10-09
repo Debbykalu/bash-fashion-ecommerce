@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | BIODUN STYLE GRID</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-bsg border-bottom">
+    <div class="container justify-content-between">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/logo.svg" alt="BIODUN STYLE GRID" height="40">
+      </a>
+      <span class="badge bg-bsg-gold text-dark font-heading px-3 py-2">CHECKOUT</span>
+    </div>
+  </nav>
+
+  <!-- Checkout Container -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-5">
+        
+        <!-- Customer & Delivery Information Form -->
+        <div class="col-lg-7">
+          <div class="bg-white border rounded p-4 mb-4">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h5 class="font-heading mb-0"><i class="bi bi-person me-2 text-bsg-burgundy"></i> CUSTOMER INFORMATION</h5>
+              <small class="text-muted">Guest Checkout Enabled</small>
+            </div>
+            
+            <form id="bsgCheckoutForm">
+              <div class="row g-3 mb-4">
+                <div class="col-12">
+                  <label class="form-label font-heading small fw-bold">Full Name *</label>
+                  <input type="text" id="checkoutName" class="form-control" required placeholder="e.g. Babatunde Fashola">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label font-heading small fw-bold">Email Address *</label>
+                  <input type="email" id="checkoutEmail" class="form-control" required placeholder="name@example.com">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label font-heading small fw-bold">Phone Number (WhatsApp) *</label>
+                  <input type="tel" id="checkoutPhone" class="form-control" required placeholder="08012345678">
+                </div>
+              </div>
+
+              <h5 class="font-heading mb-3 pt-3 border-top"><i class="bi bi-geo-alt me-2 text-bsg-burgundy"></i> DELIVERY ADDRESS</h5>
+              <div class="row g-3 mb-4">
+                <div class="col-12">
+                  <label class="form-label font-heading small fw-bold">Street Address *</label>
+                  <input type="text" id="checkoutAddress" class="form-control" required placeholder="House/Flat number, Street name, Area">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label font-heading small fw-bold">City / Town *</label>
+                  <input type="text" id="checkoutCity" class="form-control" required placeholder="e.g. Ikeja, Lekki, Victoria Island">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label font-heading small fw-bold">State in Nigeria *</label>
+                  <select id="checkoutState" class="form-select" required>
+                    <option value="">Select State</option>
+                    <option value="Lagos">Lagos State</option>
+                    <option value="Abuja (FCT)">Abuja (FCT)</option>
+                    <option value="Oyo">Oyo State</option>
+                    <option value="Rivers">Rivers State</option>
+                    <option value="Kano">Kano State</option>
+                    <option value="Ogun">Ogun State</option>
+                    <option value="Enugu">Enugu State</option>
+                    <option value="Anambra">Anambra State</option>
+                    <option value="Delta">Delta State</option>
+                    <option value="Edo">Edo State</option>
+                    <option value="Kaduna">Kaduna State</option>
+                    <option value="Osun">Osun State</option>
+                    <option value="Ondo">Ondo State</option>
+                    <option value="Kwara">Kwara State</option>
+                    <option value="Other">Other State</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label font-heading small fw-bold">Delivery Notes (Optional)</label>
+                  <textarea id="checkoutNotes" class="form-control" rows="2" placeholder="Special delivery instructions or landmark"></textarea>
+                </div>
+              </div>
+
+              <!-- Payment Method Section -->
+              <h5 class="font-heading mb-3 pt-3 border-top"><i class="bi bi-credit-card me-2 text-bsg-burgundy"></i> PAYMENT METHOD</h5>
+              <div class="p-3 border rounded bg-light mb-4">
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="paymentType" id="paystackRadio" checked>
+                    <label class="form-check-label fw-bold text-dark" for="paystackRadio">
+                      Paystack Payment Gateway (Cards, Bank Transfer, USSD)
+                    </label>
+                  </div>
+                  <span class="badge bg-bsg-burgundy">Secure</span>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-bsg-primary btn-lg w-100 py-3 fw-bold">
+                PAY WITH PAYSTACK
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Order Summary Sidebar -->
+        <div class="col-lg-5">
+          <div class="bg-white border rounded p-4 sticky-top" style="top: 90px;">
+            <h5 class="font-heading mb-4 border-bottom pb-2">ORDER SUMMARY</h5>
+            
+            <div id="checkoutSummaryItems" class="mb-4">
+              <!-- Rendered dynamically -->
+            </div>
+
+            <div class="d-flex justify-content-between mb-2">
+              <span class="text-muted">Subtotal:</span>
+              <span id="summarySubtotal" class="fw-bold">₦0</span>
+            </div>
+            <div class="d-flex justify-content-between mb-2">
+              <span class="text-muted">Delivery (Flat Fee):</span>
+              <span id="summaryDelivery" class="fw-bold text-bsg-burgundy">₦5,000</span>
+            </div>
+
+            <hr>
+
+            <div class="d-flex justify-content-between fs-4 font-heading fw-bold">
+              <span>TOTAL</span>
+              <span id="summaryTotal" class="text-bsg-burgundy">₦0</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-bsg">
+    <div class="container text-center small text-muted">
+      <p class="mb-0">© 2026 BIODUN STYLE GRID (BSG). Prototype Netlify Build.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/checkout.js"></script>
+  <script src="js/paystack.js"></script>
+</body>
+</html>

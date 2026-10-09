@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bespoke Tailoring Atelier | BashFodio Fashion</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="assets/logo-icon.svg" type="image/svg+xml">
+</head>
+<body class="biodun-grid-pattern">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-luxury">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="assets/logo.svg" alt="BashFodio Fashion" height="46">
+      </a>
+      <button class="navbar-toggler border-gold" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+        <i data-lucide="menu" class="text-gold"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link nav-link-luxury" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-luxury" href="shop.html">Couture Shop</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-luxury active" href="bespoke.html">Bespoke Atelier</a></li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-3">
+          <a href="#" class="btn btn-outline-gold p-2 position-relative trigger-cart-drawer">
+            <i data-lucide="shopping-bag" style="width: 20px; height: 20px;"></i>
+            <span class="cart-icon-badge cart-count-badge">0</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header Banner -->
+  <header class="py-5 bg-charcoal border-bottom border-secondary text-center">
+    <div class="container py-3">
+      <span class="badge bg-burgundy border border-gold text-gold px-3 py-1 mb-2">LAGOS ATELIER</span>
+      <h1 class="font-serif display-5 text-white mb-2">Bespoke Fitting & Measurement Form</h1>
+      <p class="text-cream opacity-75 max-width-600 mx-auto">Provide your precision body dimensions for custom-tailored royal Agbadas, kaftans, or evening gowns.</p>
+    </div>
+  </header>
+
+  <!-- Bespoke Form Container -->
+  <section class="py-5">
+    <div class="container" style="max-width: 900px;">
+      
+      <div class="glass-card p-5">
+        <form id="bespokeForm">
+          
+          <h5 class="font-serif text-gold mb-3"><i data-lucide="user" class="me-2"></i> 1. Personal & Contact Information</h5>
+          <div class="row g-3 mb-4">
+            <div class="col-md-6">
+              <label class="form-label text-cream small">Full Name *</label>
+              <input type="text" name="fullName" class="form-control form-luxury" required placeholder="His Excellency / Chief / Dr.">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label text-cream small">Email Address *</label>
+              <input type="email" name="email" class="form-control form-luxury" required placeholder="client@domain.com">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label text-cream small">Phone Number (WhatsApp) *</label>
+              <input type="tel" name="phone" class="form-control form-luxury" required placeholder="+234 ...">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label text-cream small">Gender Category *</label>
+              <select name="gender" class="form-select form-luxury">
+                <option value="Male">Gentleman Couture</option>
+                <option value="Female">Lady Empress Couture</option>
+                <option value="Couple">Couple Aso-Ebi Suite</option>
+              </select>
+            </div>
+          </div>
+
+          <h5 class="font-serif text-gold mb-3"><i data-lucide="scissors" class="me-2"></i> 2. Garment & Fabric Selection</h5>
+          <div class="row g-3 mb-4">
+            <div class="col-md-4">
+              <label class="form-label text-cream small">Outfit Type *</label>
+              <select name="outfitType" class="form-select form-luxury">
+                <option value="Royal Agbada 3-Piece">Royal Agbada 3-Piece Set</option>
+                <option value="Tailored Kaftan Set">Tailored Silk Velvet Kaftan</option>
+                <option value="Empress Evening Gown">Empress Velvet & Silk Gown</option>
+                <option value="Bespoke Aso-Ebi Suite">Bespoke Aso-Ebi Suite</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label text-cream small">Preferred Fabric *</label>
+              <select name="preferredFabric" class="form-select form-luxury">
+                <option value="Swiss Damask Velvet (Burgundy #6A1222)">Swiss Damask Velvet (Burgundy #6A1222)</option>
+                <option value="Italian Silk Blend (Gold #B98B36 Accents)">Italian Silk Blend (Gold #B98B36 Accents)</option>
+                <option value="French Corded Lace">French Corded Lace</option>
+                <option value="Fine Cashmere Wool">Fine Cashmere Wool</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label text-cream small">Preferred Fitting Date *</label>
+              <input type="date" name="fittingDate" class="form-control form-luxury" required>
+            </div>
+          </div>
+
+          <h5 class="font-serif text-gold mb-3"><i data-lucide="ruler" class="me-2"></i> 3. Precision Body Metrics (Inches or CM)</h5>
+          <p class="small text-muted mb-3">If you are unsure of exact figures, select 'Standard Size' and our atelier concierge will arrange a video measurement session.</p>
+
+          <div class="row g-3 mb-4">
+            <div class="col-md-4 col-6">
+              <label class="form-label text-cream small">Chest / Bust Circumference</label>
+              <input type="text" name="chest" class="form-control form-luxury" placeholder="e.g. 42 inches">
+            </div>
+            <div class="col-md-4 col-6">
+              <label class="form-label text-cream small">Shoulder Width</label>
+              <input type="text" name="shoulder" class="form-control form-luxury" placeholder="e.g. 19 inches">
+            </div>
+            <div class="col-md-4 col-6">
+              <label class="form-label text-cream small">Waist Circumference</label>
+              <input type="text" name="waist" class="form-control form-luxury" placeholder="e.g. 34 inches">
+            </div>
+            <div class="col-md-4 col-6">
+              <label class="form-label text-cream small">Hip Circumference</label>
+              <input type="text" name="hip" class="form-control form-luxury" placeholder="e.g. 44 inches">
+            </div>
+            <div class="col-md-4 col-6">
+              <label class="form-label text-cream small">Sleeve / Arm Length</label>
+              <input type="text" name="armLength" class="form-control form-luxury" placeholder="e.g. 26 inches">
+            </div>
+            <div class="col-md-4 col-6">
+              <label class="form-label text-cream small">Full Outfit Length</label>
+              <input type="text" name="outfitLength" class="form-control form-luxury" placeholder="e.g. 58 inches">
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-gold btn-lg w-100 py-3 fw-bold">
+            <i data-lucide="send" class="me-2"></i> SUBMIT BESPOKE FITTING REQUEST
+          </button>
+        </form>
+
+        <div id="bookingSuccessBox" class="mt-4 p-4 bg-dark border border-gold rounded text-center d-none">
+          <i data-lucide="check-circle" class="text-gold mb-2" style="width: 48px; height: 48px;"></i>
+          <h4 class="font-serif text-white">Bespoke Fitting Logged!</h4>
+          <p class="text-cream opacity-90 mb-2">Your consultation reference code is: <strong id="resRef" class="text-gold font-monospace"></strong></p>
+          <p class="small text-muted mb-3">Our Atelier Master Tailor will contact your phone/WhatsApp within 2 hours to confirm fabric swatch dispatch.</p>
+          <a href="shop.html" class="btn btn-outline-gold btn-sm">Explore Shop</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-luxury text-center border-top border-secondary py-4">
+    <div class="container">
+      <img src="assets/logo.svg" alt="BashFodio" height="40" class="mb-2">
+      <p class="small text-muted mb-0">© 2026 BashFodio Fashion. Inspired by God. Atelier Direct Services.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/bespoke.js"></script>
+
+  <script>
+    document.getElementById('bespokeForm')?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const booking = saveBespokeBooking(formData);
+
+      document.getElementById('bespokeForm').classList.add('d-none');
+      const box = document.getElementById('bookingSuccessBox');
+      box.classList.remove('d-none');
+      document.getElementById('resRef').textContent = booking.bookingRef;
+      if (window.lucide) window.lucide.createIcons();
+    });
+  </script>
+</body>
+</html>

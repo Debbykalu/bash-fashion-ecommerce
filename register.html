@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account | BIODUN STYLE GRID</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+</head>
+<body class="bg-bsg-bg-light">
+
+  <nav class="navbar navbar-bsg border-bottom">
+    <div class="container justify-content-between">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/logo.svg" alt="BIODUN STYLE GRID" height="40">
+      </a>
+      <a href="shop.html" class="btn btn-bsg-secondary btn-sm">Back to Store</a>
+    </div>
+  </nav>
+
+  <section class="py-5">
+    <div class="container" style="max-width: 500px;">
+      <div class="bg-white border rounded p-4 p-md-5 shadow-sm">
+        
+        <div class="text-center mb-4">
+          <h2 class="font-heading mb-1">CREATE ACCOUNT</h2>
+          <p class="text-muted small">Join BIODUN STYLE GRID for faster checkouts & order tracking</p>
+        </div>
+
+        <form id="bsgRegisterForm">
+          <div class="row g-3 mb-3">
+            <div class="col-6">
+              <label class="form-label font-heading small fw-bold">First Name *</label>
+              <input type="text" id="regFirstName" class="form-control" required placeholder="First Name">
+            </div>
+            <div class="col-6">
+              <label class="form-label font-heading small fw-bold">Last Name *</label>
+              <input type="text" id="regLastName" class="form-control" required placeholder="Last Name">
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label font-heading small fw-bold">Email Address *</label>
+            <input type="email" id="regEmail" class="form-control" required placeholder="name@example.com">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label font-heading small fw-bold">Phone Number (WhatsApp) *</label>
+            <input type="tel" id="regPhone" class="form-control" required placeholder="08012345678">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label font-heading small fw-bold">Password *</label>
+            <input type="password" id="regPassword" class="form-control" required placeholder="At least 6 characters">
+          </div>
+
+          <div class="mb-4">
+            <label class="form-label font-heading small fw-bold">Confirm Password *</label>
+            <input type="password" id="regConfirmPassword" class="form-control" required placeholder="Re-enter password">
+          </div>
+
+          <button type="submit" class="btn btn-bsg-primary w-100 py-3 fw-bold mb-3">
+            CREATE ACCOUNT
+          </button>
+        </form>
+
+        <div class="text-center pt-3 border-top small">
+          <span class="text-muted">Already have an account?</span>
+          <a href="login.html" class="fw-bold text-bsg-burgundy ms-1">Login</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/auth.js"></script>
+
+  <script>
+    document.getElementById('bsgRegisterForm')?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const fn = document.getElementById('regFirstName').value.trim();
+      const ln = document.getElementById('regLastName').value.trim();
+      const email = document.getElementById('regEmail').value.trim();
+      const phone = document.getElementById('regPhone').value.trim();
+      const pass = document.getElementById('regPassword').value;
+      const confirmPass = document.getElementById('regConfirmPassword').value;
+
+      if (pass !== confirmPass) {
+        showBsgToast("Passwords do not match.", "danger");
+        return;
+      }
+
+      const res = registerUser(fn, ln, email, phone, pass);
+      if (res.success) {
+        showBsgToast("Account created successfully!", "success");
+        setTimeout(() => window.location.href = 'account.html', 800);
+      } else {
+        showBsgToast(res.message, "danger");
+      }
+    });
+  </script>
+</body>
+</html>

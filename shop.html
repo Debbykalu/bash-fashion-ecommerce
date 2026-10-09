@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop All Native Wear | BIODUN STYLE GRID</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar text-center">
+    <div class="container">
+      <span><i class="bi bi-truck me-1"></i> FREE DELIVERY IN NIGERIA ON ORDERS OVER ₦150,000</span>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-bsg">
+    <div class="container">
+      <a class="navbar-brand me-4" href="index.html">
+        <img src="assets/logo.svg" alt="BIODUN STYLE GRID" height="42">
+      </a>
+      <div class="d-flex align-items-center gap-2 d-lg-none ms-auto me-2">
+        <a href="cart.html" class="btn btn-link text-dark p-1 position-relative">
+          <i class="bi bi-bag fs-5"></i>
+          <span class="cart-count-badge position-absolute top-0 start-100 translate-middle">0</span>
+        </a>
+      </div>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#bsgNavMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="bsgNavMenu">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-center">
+          <li class="nav-item"><a class="nav-link nav-link-bsg" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-bsg active" href="shop.html">Shop</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-bsg" href="shop.html?filter=new">New Arrivals</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-bsg" href="collections.html">Collections</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-bsg" href="about.html">About</a></li>
+        </ul>
+
+        <div class="d-none d-lg-flex align-items-center gap-3">
+          <a href="login.html" class="nav-link-bsg text-dark nav-account-link me-2"><i class="bi bi-person me-1"></i> Account</a>
+          <a href="cart.html" class="btn btn-bsg-primary btn-sm py-2 px-3 d-flex align-items-center gap-2">
+            <i class="bi bi-bag"></i> Cart <span class="badge bg-white text-dark rounded-circle cart-count-badge">0</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Shop Header -->
+  <section class="py-4 bg-bsg-bg-light border-bottom">
+    <div class="container">
+      <h1 class="font-heading mb-1">SHOP ALL</h1>
+      <p class="text-muted mb-0">Browse our complete collection of modern Nigerian men's native wear</p>
+    </div>
+  </section>
+
+  <!-- Shop Main Content & Filtering -->
+  <section class="py-5">
+    <div class="container">
+      
+      <!-- Filter Bar Controls -->
+      <div class="bg-white p-3 border rounded mb-4">
+        <div class="row g-3 align-items-center">
+          <!-- Search Input -->
+          <div class="col-12 col-md-4">
+            <div class="input-group">
+              <span class="input-group-text bg-white border-end-0 text-muted"><i class="bi bi-search"></i></span>
+              <input type="text" id="shopSearchInput" class="form-control border-start-0" placeholder="Search by name, color, style...">
+            </div>
+          </div>
+
+          <!-- Category Select -->
+          <div class="col-6 col-md-3">
+            <select id="filterCategory" class="form-select">
+              <option value="all">All Categories</option>
+              <option value="Senator">Senator</option>
+              <option value="Native Shirts">Native Shirts</option>
+              <option value="Kaftan">Kaftan</option>
+              <option value="Agbada">Agbada</option>
+              <option value="Native Two-Piece">Native Two-Piece</option>
+              <option value="Accessories">Accessories</option>
+            </select>
+          </div>
+
+          <!-- Color Select -->
+          <div class="col-6 col-md-2">
+            <select id="filterColour" class="form-select">
+              <option value="all">All Colors</option>
+              <option value="Burgundy">Burgundy</option>
+              <option value="Black">Black</option>
+              <option value="White">White</option>
+              <option value="Army Green">Army Green</option>
+              <option value="Blue">Blue</option>
+              <option value="Cream">Cream</option>
+              <option value="Yellow">Yellow</option>
+              <option value="Green">Green</option>
+              <option value="Grey">Grey</option>
+              <option value="Beige">Beige</option>
+            </select>
+          </div>
+
+          <!-- Sort Select -->
+          <div class="col-12 col-md-3">
+            <select id="sortSelect" class="form-select">
+              <option value="featured">Sort by: Featured</option>
+              <option value="newest">Sort by: Newest</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="row g-4" id="shopCatalogGrid">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-bsg">
+    <div class="container">
+      <div class="text-center small text-muted">
+        <p class="mb-0">© 2026 BIODUN STYLE GRID (BSG). Prototype Netlify Build.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/app.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const searchParam = urlParams.get('search');
+      const catParam = urlParams.get('category');
+      const filterParam = urlParams.get('filter');
+
+      if (searchParam) document.getElementById('shopSearchInput').value = searchParam;
+      if (catParam) document.getElementById('filterCategory').value = catParam;
+      if (filterParam === 'new') document.getElementById('sortSelect').value = 'newest';
+
+      renderShopCatalog();
+
+      document.getElementById('shopSearchInput')?.addEventListener('input', renderShopCatalog);
+      document.getElementById('filterCategory')?.addEventListener('change', renderShopCatalog);
+      document.getElementById('filterColour')?.addEventListener('change', renderShopCatalog);
+      document.getElementById('sortSelect')?.addEventListener('change', renderShopCatalog);
+    });
+
+    function renderShopCatalog() {
+      const grid = document.getElementById('shopCatalogGrid');
+      if (!grid) return;
+
+      const query = document.getElementById('shopSearchInput')?.value.trim().toLowerCase() || '';
+      const catFilter = document.getElementById('filterCategory')?.value || 'all';
+      const colFilter = document.getElementById('filterColour')?.value || 'all';
+      const sortBy = document.getElementById('sortSelect')?.value || 'featured';
+
+      let filtered = PRODUCTS.filter(p => {
+        const matchesCategory = catFilter === 'all' || p.category === catFilter;
+        const matchesColor = colFilter === 'all' || p.colour.toLowerCase() === colFilter.toLowerCase();
+        
+        const searchMatches = p.name.toLowerCase().includes(query) || 
+                              p.category.toLowerCase().includes(query) || 
+                              p.colour.toLowerCase().includes(query) ||
+                              p.description.toLowerCase().includes(query);
+
+        return matchesCategory && matchesColor && searchMatches;
+      });
+
+      if (sortBy === 'newest') filtered.sort((a,b) => (b.isNew ? 1 : 0) - (a.isNew ? 1 : 0));
+      if (sortBy === 'price-low') filtered.sort((a,b) => a.price - b.price);
+      if (sortBy === 'price-high') filtered.sort((a,b) => b.price - a.price);
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="col-12 text-center py-5">
+            <i class="bi bi-search text-muted display-4 mb-3 d-block"></i>
+            <h4 class="font-heading">No products found.</h4>
+            <p class="text-muted small mb-3">Try checking spelling or adjusting your category/color filters.</p>
+            <button onclick="resetShopFilters()" class="btn btn-bsg-secondary btn-sm">Clear All Filters</button>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(p => createProductCardHtml(p)).join('');
+    }
+
+    function resetShopFilters() {
+      document.getElementById('shopSearchInput').value = '';
+      document.getElementById('filterCategory').value = 'all';
+      document.getElementById('filterColour').value = 'all';
+      document.getElementById('sortSelect').value = 'featured';
+      renderShopCatalog();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BIODUN STYLE GRID | Simple Nigerian Men's Native Wear</title>
+  <meta name="description" content="BIODUN STYLE GRID (BSG) - Simple Nigerian wear, thoughtfully made for the modern man. Shop Senator outfits, Kaftans, Native shirts, and Agbada online.">
+  
+  <!-- Bootstrap 5 & Bootstrap Icons CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  
+  <!-- BSG Custom Brand CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar text-center">
+    <div class="container">
+      <span><i class="bi bi-truck me-1"></i> FREE EXPRESS NIGERIA DELIVERY ON ORDERS OVER ₦150,000 | SECURE PAYSTACK CHECKOUT</span>
+    </div>
+  </div>
+
+  <!-- Main Header Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-bsg">
+    <div class="container">
+      
+      <!-- LEFT: Logo -->
+      <a class="navbar-brand me-4 d-flex align-items-center" href="index.html">
+        <img src="assets/logo.svg" alt="BIODUN STYLE GRID Emblem" height="48">
+      </a>
+
+      <!-- Mobile Controls: Cart & Hamburger -->
+      <div class="d-flex align-items-center gap-2 d-lg-none ms-auto me-2">
+        <a href="cart.html" class="btn btn-link text-dark p-1 position-relative">
+          <i class="bi bi-bag fs-5"></i>
+          <span class="cart-count-badge position-absolute top-0 start-100 translate-middle">0</span>
+        </a>
+      </div>
+
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#bsgNavMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- CENTRE: Navigation Links -->
+      <div class="collapse navbar-collapse" id="bsgNavMenu">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-center">
+          <li class="nav-item"><a class="nav-link nav-link-bsg active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-bsg" href="shop.html">Shop</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-bsg" href="shop.html?filter=new">New Arrivals</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-bsg" href="collections.html">Collections</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-bsg" href="about.html">About</a></li>
+        </ul>
+
+        <!-- RIGHT: Account, Cart -->
+        <div class="d-none d-lg-flex align-items-center gap-3">
+          <a href="login.html" class="nav-link-bsg text-dark nav-account-link me-2">
+            <i class="bi bi-person me-1"></i> Account
+          </a>
+
+          <a href="cart.html" class="btn btn-bsg-primary btn-sm py-2 px-3 d-flex align-items-center gap-2">
+            <i class="bi bi-bag"></i> Cart <span class="badge bg-white text-dark rounded-circle cart-count-badge">0</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-bsg">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <span class="badge bg-bsg-gold text-dark font-heading px-3 py-2 mb-3">BIODUN STYLE GRID 2026</span>
+          <h1 class="hero-title">STYLE THAT SPEAKS FOR ITSELF.</h1>
+          <p class="hero-subtitle">Simple Nigerian wear, thoughtfully made for the modern man.</p>
+          
+          <div class="d-flex gap-3 flex-wrap">
+            <a href="shop.html" class="btn btn-bsg-primary btn-lg">SHOP NOW</a>
+            <a href="collections.html" class="btn btn-bsg-secondary btn-lg">EXPLORE COLLECTION</a>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="hero-img-box">
+            <img src="assets/images/burgundy_embroidered_kaftan.jpg" alt="Modern Nigerian Male Native Wear" class="hero-img">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shop By Category Section -->
+  <section class="py-5 bg-bsg-white border-bottom">
+    <div class="container py-3">
+      <div class="text-center mb-5">
+        <h2 class="font-heading mb-2">SHOP BY CATEGORY</h2>
+        <p class="text-muted">Explore tailored Nigerian men's native wear categories</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Category 1: Senator -->
+        <div class="col-6 col-md-3">
+          <a href="shop.html?category=Senator" class="category-card">
+            <img src="assets/images/purple_native_set.jpg" alt="Senator Native Wear">
+            <div class="category-card-overlay">
+              <h3 class="category-card-title">Senator</h3>
+              <span class="small text-bsg-gold fw-bold">Shop Now <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Category 2: Native Shirts -->
+        <div class="col-6 col-md-3">
+          <a href="shop.html?category=Native Shirts" class="category-card">
+            <img src="assets/images/burgundy_embroidered_kaftan.jpg" alt="Native Shirts">
+            <div class="category-card-overlay">
+              <h3 class="category-card-title">Native Shirts</h3>
+              <span class="small text-bsg-gold fw-bold">Shop Now <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Category 3: Kaftan -->
+        <div class="col-6 col-md-3">
+          <a href="shop.html?category=Kaftan" class="category-card">
+            <img src="assets/images/navy_kaftan_fila.jpg" alt="Kaftan">
+            <div class="category-card-overlay">
+              <h3 class="category-card-title">Kaftan</h3>
+              <span class="small text-bsg-gold fw-bold">Shop Now <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Category 4: Agbada -->
+        <div class="col-6 col-md-3">
+          <a href="shop.html?category=Agbada" class="category-card">
+            <img src="assets/images/charcoal_monogram_kaftan.jpg" alt="Agbada">
+            <div class="category-card-overlay">
+              <h3 class="category-card-title">Agbada</h3>
+              <span class="small text-bsg-gold fw-bold">Shop Now <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Collection (8 Products) -->
+  <section class="py-5 bg-bsg-bg-light">
+    <div class="container py-3">
+      <div class="d-flex justify-content-between align-items-end mb-4">
+        <div>
+          <h2 class="font-heading mb-1">FEATURED COLLECTION</h2>
+          <p class="text-muted mb-0">Handpicked styles for everyday elegance</p>
+        </div>
+        <a href="shop.html" class="btn btn-bsg-secondary btn-sm">View All Products</a>
+      </div>
+
+      <div class="row g-4" id="homeFeaturedGrid">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Brand Positioning Statement Banner -->
+  <section class="py-5 bg-bsg-black text-white text-center">
+    <div class="container py-4" style="max-width: 800px;">
+      <span class="badge bg-bsg-burgundy text-white font-heading px-3 py-2 mb-3">BIODUN STYLE GRID</span>
+      <h2 class="text-white display-6 mb-3">Tradition Meets Modern Innovation</h2>
+      <p class="lead opacity-80 mb-4">
+        Designed in Lagos, BIODUN STYLE GRID creates simple, high-quality Nigerian native wear that honors rich cultural heritage while serving the contemporary lifestyle of the modern gentleman.
+      </p>
+      <a href="about.html" class="btn btn-bsg-gold px-4 py-2">READ OUR STORY</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-bsg">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-lg-4">
+          <img src="assets/logo-white.svg" alt="BSG Emblem" height="48" class="mb-3">
+          <p class="small text-muted mb-4" style="max-width: 320px;">
+            BIODUN STYLE GRID (BSG) - Nigerian men's native-wear fashion brand. Simple Nigerian wear, thoughtfully made for the modern man.
+          </p>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <h6>SHOP</h6>
+          <ul class="list-unstyled d-flex flex-column gap-2">
+            <li><a href="shop.html">Shop All</a></li>
+            <li><a href="shop.html?filter=new">New Arrivals</a></li>
+            <li><a href="collections.html">Collections</a></li>
+            <li><a href="shop.html?category=Senator">Senators</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-3">
+          <h6>CUSTOMER CARE</h6>
+          <ul class="list-unstyled d-flex flex-column gap-2">
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="contact.html#shipping">Shipping & Delivery</a></li>
+            <li><a href="contact.html#returns">Returns & Exchanges</a></li>
+            <li><a href="about.html#size-guide">Size Guide</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-3">
+          <h6>ACCOUNT & ADMIN</h6>
+          <ul class="list-unstyled d-flex flex-column gap-2 mb-3">
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Create Account</a></li>
+            <li><a href="cart.html">My Cart</a></li>
+            <li><a href="admin.html" class="text-muted"><i class="bi bi-shield-lock me-1"></i> Admin Portal</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-top border-secondary pt-4 text-center small text-muted">
+        <p class="mb-0">© 2026 BIODUN STYLE GRID (BSG). All Rights Reserved. Prototype Deployed to Netlify.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS Dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/app.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const grid = document.getElementById('homeFeaturedGrid');
+      if (grid) {
+        const featured = getAllProducts().filter(p => p.featured).slice(0, 8);
+        grid.innerHTML = featured.map(p => createProductCardHtml(p)).join('');
+      }
+    });
+  </script>
+</body>
+</html>
